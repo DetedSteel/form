@@ -2,21 +2,29 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+    <link rel="icon" type="image/svg+xml" href="/m_logo_green.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
     <title>Vite App</title>
   </head>
   <body>
-    <form action="" method="post" id="form">
-      <input type="text" name="name">
-      <input type="email" name="email">
-      <input type="tel" name="phone">
-      <label for="male">Мужской</label>
-      <input type="radio" name="gender" id="male" value="Мужской">
-      <label for="female">Женский</label>
-      <input type="radio" name="gender" id="female" value="Женский">
-      <button type="submit">submit</button>
-    </form>
+    <div class="container">
+      <form action="" method="post" id="form" class="form">
+        <input class="input" pattern="[А-Яа-яё]+ [А-Яа-яё]+[ ]?[А-Яа-яё]*" id="name" placeholder="Имя и фамилия" type="text" name="name" required="true">
+        <input class="input" id="email" placeholder="Электронная почта" type="email" name="email">
+        <input class="input" id="phone" placeholder="Телефон" type="tel" name="phone" required="true">
+        <input type="date" class="date" name="date" id="date" min="1940-01-01" required="true">
+        <div class="radio">     
+            <input class="radio_btn" type="radio" name="gender" id="male" value="Мужской" checked>
+            <label class="radio_label" for="male">Мужской</label>
+            <input class="radio_btn" type="radio" name="gender" id="female" value="Женский">
+            <label class="radio_label" for="female">Женский</label>
+        </div>
+        <input class="checkbox" type="checkbox" name="check" id="check" required="true">
+        <label for="check" class="checkbox_label">Даю свое согласие на обработку персональных данных в целях участия в программе лояльности и получения информации</label>
+        <button disabled type="submit" class="btn">Отправить</button>
+      </form>
+    </div>
     <script type="module" src="/script.js"></script>
   </body>
 </html>

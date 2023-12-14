@@ -16,22 +16,19 @@ const ROOT = resolve('dist');
 app.use(cors(), express.json());
 
 app.post('/register', function (request, response) {
-  // if (!request.body) return response.sendStatus(400);
   let res = '';
-  console.log(Object.values(request.body))
   Object.values(request.body).forEach(e => {
-    console.log(e)
     res += `${e};`
   })
   res += '\n'
-  fs.writeFileSync('test.csv', res, {
+  fs.writeFileSync(resolve(__dirname, 'test.csv'), res, {
     encoding: 'utf8',
     flag: 'a',
   });
   response.json(request.body);
 });
 
-app.get('/download', (req, res) => {
+app.get('/martinfo24', (req, res) => {
   res.sendFile(resolve(__dirname, 'test.csv'))
 })
 
