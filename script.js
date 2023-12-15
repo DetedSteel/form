@@ -5,15 +5,7 @@ const form = document.querySelector('#form');
 const phone = document.querySelector('#phone');
 const btn = document.querySelector('.btn');
 const container = document.querySelector('.container');
-const name = document.querySelector('#name');
-
-name.addEventListener('invalid', (e) => {
-  e.target.setCustomValidity('Введите имя и фамилию');
-});
-
-name.addEventListener('input', (e) => {
-  e.target.setCustomValidity('');
-});
+const dateNode = document.querySelector('#date');
 
 const mask = new Imask(phone, {
   mask: '+7 (900) 000-00-00',
@@ -26,6 +18,10 @@ phone.addEventListener('input', () => {
     btn.setAttribute('disabled', 'true');
   }
 });
+
+dateNode.addEventListener('focus', (e) => {
+  e.target.setAttribute('type', 'date');
+})
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
