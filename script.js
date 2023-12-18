@@ -60,7 +60,7 @@ form.addEventListener('submit', (e) => {
   });
   axios({
     method: 'post',
-    url: 'http://localhost:3000/register',
+    url: 'http://77.223.126.234:3000/register',
     data: data,
   })
     .then((res) => {
